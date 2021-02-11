@@ -42,13 +42,14 @@ module.exports = function (app) {
       );
     } else {
       let newTodo = Todos({
-        username: "test",
+        username: "bob ross",
         todo: req.body.todo,
         isDone: req.body.isDone,
         hasAttachment: req.body.hasAttachment,
       });
 
       newTodo.save((err) => {
+        console.log(newTodo);
         res.send("Success");
       });
     }
